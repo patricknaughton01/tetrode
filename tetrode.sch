@@ -16448,7 +16448,6 @@ Example datasheet (PBRC-H)</description>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="R3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/5" package3d_urn="urn:adsk.eagle:package:25955/1" value="220"/>
-<part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R4" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/5" package3d_urn="urn:adsk.eagle:package:25955/1" value="220"/>
@@ -16482,6 +16481,7 @@ Example datasheet (PBRC-H)</description>
 <part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="Y1" library="SparkFun-Clocks" library_urn="urn:adsk.eagle:library:511" deviceset="RESONATOR" device="PTH-7.6X3.8" package3d_urn="urn:adsk.eagle:package:37527/1"/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16546,9 +16546,6 @@ Example datasheet (PBRC-H)</description>
 <instance part="R3" gate="G$1" x="63.5" y="160.02" smashed="yes" rot="R90">
 <attribute name="NAME" x="62.0014" y="156.21" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="66.802" y="156.21" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="P+7" gate="1" x="180.34" y="50.8" smashed="yes">
-<attribute name="VALUE" x="177.8" y="45.72" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="GND7" gate="1" x="180.34" y="25.4" smashed="yes">
 <attribute name="VALUE" x="177.8" y="22.86" size="1.778" layer="96"/>
@@ -16668,6 +16665,9 @@ Example datasheet (PBRC-H)</description>
 <instance part="GND11" gate="1" x="30.48" y="20.32" smashed="yes">
 <attribute name="VALUE" x="27.94" y="17.78" size="1.778" layer="96"/>
 </instance>
+<instance part="P+7" gate="1" x="177.8" y="53.34" smashed="yes">
+<attribute name="VALUE" x="175.26" y="48.26" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -16682,12 +16682,6 @@ Example datasheet (PBRC-H)</description>
 <pinref part="P+6" gate="1" pin="+5V"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="63.5" y1="172.72" x2="63.5" y2="165.1" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="S1" gate="G$1" pin="1"/>
-<pinref part="P+7" gate="1" pin="+5V"/>
-<wire x1="182.88" y1="43.18" x2="180.34" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="180.34" y1="43.18" x2="180.34" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="LCD1" gate="G$1" pin="VDD"/>
@@ -16759,6 +16753,12 @@ Example datasheet (PBRC-H)</description>
 <wire x1="101.6" y1="101.6" x2="101.6" y2="124.46" width="0.1524" layer="91"/>
 <junction x="101.6" y="124.46"/>
 </segment>
+<segment>
+<pinref part="S1" gate="G$1" pin="2"/>
+<wire x1="182.88" y1="40.64" x2="177.8" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="P+7" gate="1" pin="+5V"/>
+<wire x1="177.8" y1="40.64" x2="177.8" y2="50.8" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="RST" class="0">
 <segment>
@@ -16804,12 +16804,6 @@ Example datasheet (PBRC-H)</description>
 <pinref part="GND3" gate="1" pin="GND"/>
 <pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="63.5" y1="142.24" x2="63.5" y2="137.16" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="S1" gate="G$1" pin="2"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-<wire x1="182.88" y1="40.64" x2="180.34" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="180.34" y1="40.64" x2="180.34" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
@@ -16901,6 +16895,12 @@ Example datasheet (PBRC-H)</description>
 <pinref part="Y1" gate="G$1" pin="2"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="30.48" y1="30.48" x2="30.48" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND7" gate="1" pin="GND"/>
+<wire x1="180.34" y1="27.94" x2="180.34" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="S1" gate="G$1" pin="1"/>
+<wire x1="180.34" y1="43.18" x2="182.88" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">

@@ -16493,6 +16493,9 @@ Datasheet (TS53YL502MR10)</description>
 <part name="S3" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="40-XX" device="" package3d_urn="urn:adsk.eagle:package:27483/1"/>
 <part name="S4" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="40-XX" device="" package3d_urn="urn:adsk.eagle:package:27483/1"/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="CPOL-EU" device="E2-5" package3d_urn="urn:adsk.eagle:package:25833/1" value="2.2u"/>
+<part name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="CPOL-EU" device="E2-5" package3d_urn="urn:adsk.eagle:package:25833/1" value="2.2u"/>
+<part name="C4" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="CPOL-EU" device="E2-5" package3d_urn="urn:adsk.eagle:package:25833/1" value="2.2u"/>
 </parts>
 <sheets>
 <sheet>
@@ -16600,11 +16603,11 @@ Datasheet (TS53YL502MR10)</description>
 <attribute name="NAME" x="128.27" y="64.5414" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="128.27" y="69.342" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND4" gate="1" x="149.86" y="58.42" smashed="yes">
-<attribute name="VALUE" x="147.32" y="55.88" size="1.778" layer="96"/>
+<instance part="GND4" gate="1" x="134.62" y="124.46" smashed="yes">
+<attribute name="VALUE" x="132.08" y="121.92" size="1.778" layer="96"/>
 </instance>
-<instance part="GND9" gate="1" x="160.02" y="58.42" smashed="yes">
-<attribute name="VALUE" x="157.48" y="55.88" size="1.778" layer="96"/>
+<instance part="GND9" gate="1" x="167.64" y="121.92" smashed="yes">
+<attribute name="VALUE" x="165.1" y="119.38" size="1.778" layer="96"/>
 </instance>
 <instance part="P+10" gate="1" x="10.16" y="111.76" smashed="yes">
 <attribute name="VALUE" x="7.62" y="106.68" size="1.778" layer="96" rot="R90"/>
@@ -16631,8 +16634,8 @@ Datasheet (TS53YL502MR10)</description>
 <attribute name="NAME" x="115.57" y="44.2214" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="115.57" y="49.022" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND15" gate="1" x="170.18" y="58.42" smashed="yes">
-<attribute name="VALUE" x="167.64" y="55.88" size="1.778" layer="96"/>
+<instance part="GND15" gate="1" x="177.8" y="121.92" smashed="yes">
+<attribute name="VALUE" x="175.26" y="119.38" size="1.778" layer="96"/>
 </instance>
 <instance part="LS1" gate="G$1" x="22.86" y="137.16" smashed="yes">
 <attribute name="NAME" x="19.044509375" y="146.06281875" size="1.78056875" layer="95"/>
@@ -16645,20 +16648,32 @@ Datasheet (TS53YL502MR10)</description>
 <attribute name="NAME" x="21.3614" y="151.13" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="26.162" y="151.13" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="S2" gate="1" x="149.86" y="86.36" smashed="yes">
-<attribute name="NAME" x="143.51" y="83.82" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="146.05" y="89.535" size="1.778" layer="96" rot="R90"/>
+<instance part="S2" gate="1" x="134.62" y="152.4" smashed="yes">
+<attribute name="NAME" x="128.27" y="149.86" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="130.81" y="155.575" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="S3" gate="1" x="160.02" y="86.36" smashed="yes">
-<attribute name="NAME" x="153.67" y="83.82" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="156.21" y="89.535" size="1.778" layer="96" rot="R90"/>
+<instance part="S3" gate="1" x="167.64" y="149.86" smashed="yes">
+<attribute name="NAME" x="161.29" y="147.32" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="163.83" y="153.035" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="S4" gate="1" x="170.18" y="86.36" smashed="yes">
-<attribute name="NAME" x="163.83" y="83.82" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="166.37" y="89.535" size="1.778" layer="96" rot="R90"/>
+<instance part="S4" gate="1" x="177.8" y="149.86" smashed="yes">
+<attribute name="NAME" x="171.45" y="147.32" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="173.99" y="153.035" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="P+4" gate="1" x="86.36" y="132.08" smashed="yes">
 <attribute name="VALUE" x="83.82" y="127" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C1" gate="G$1" x="142.24" y="152.4" smashed="yes">
+<attribute name="NAME" x="143.764" y="152.781" size="1.778" layer="95"/>
+<attribute name="VALUE" x="143.764" y="147.701" size="1.778" layer="96"/>
+</instance>
+<instance part="C2" gate="G$1" x="104.14" y="142.24" smashed="yes">
+<attribute name="NAME" x="105.664" y="142.621" size="1.778" layer="95"/>
+<attribute name="VALUE" x="105.664" y="137.541" size="1.778" layer="96"/>
+</instance>
+<instance part="C4" gate="G$1" x="104.14" y="154.94" smashed="yes">
+<attribute name="NAME" x="105.664" y="155.321" size="1.778" layer="95"/>
+<attribute name="VALUE" x="105.664" y="150.241" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -16839,23 +16854,27 @@ Datasheet (TS53YL502MR10)</description>
 </segment>
 <segment>
 <pinref part="GND4" gate="1" pin="GND"/>
-<wire x1="149.86" y1="81.28" x2="149.86" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="147.32" x2="134.62" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="S2" gate="1" pin="P"/>
 <pinref part="S2" gate="1" pin="P1"/>
-<wire x1="149.86" y1="78.74" x2="149.86" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="81.28" x2="152.4" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="78.74" x2="149.86" y2="78.74" width="0.1524" layer="91"/>
-<junction x="149.86" y="78.74"/>
+<wire x1="134.62" y1="144.78" x2="134.62" y2="127" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="147.32" x2="137.16" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="144.78" x2="134.62" y2="144.78" width="0.1524" layer="91"/>
+<junction x="134.62" y="144.78"/>
+<pinref part="C1" gate="G$1" pin="-"/>
+<wire x1="142.24" y1="147.32" x2="142.24" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="144.78" x2="137.16" y2="144.78" width="0.1524" layer="91"/>
+<junction x="137.16" y="144.78"/>
 </segment>
 <segment>
 <pinref part="GND9" gate="1" pin="GND"/>
-<wire x1="160.02" y1="81.28" x2="160.02" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="144.78" x2="167.64" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="S3" gate="1" pin="P"/>
 <pinref part="S3" gate="1" pin="P1"/>
-<wire x1="160.02" y1="78.74" x2="160.02" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="81.28" x2="162.56" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="78.74" x2="160.02" y2="78.74" width="0.1524" layer="91"/>
-<junction x="160.02" y="78.74"/>
+<wire x1="167.64" y1="142.24" x2="167.64" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="144.78" x2="170.18" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="142.24" x2="167.64" y2="142.24" width="0.1524" layer="91"/>
+<junction x="167.64" y="142.24"/>
 </segment>
 <segment>
 <pinref part="GND12" gate="1" pin="GND"/>
@@ -16864,13 +16883,13 @@ Datasheet (TS53YL502MR10)</description>
 </segment>
 <segment>
 <pinref part="GND15" gate="1" pin="GND"/>
-<wire x1="170.18" y1="81.28" x2="170.18" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="144.78" x2="177.8" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="S4" gate="1" pin="P"/>
 <pinref part="S4" gate="1" pin="P1"/>
-<wire x1="170.18" y1="78.74" x2="170.18" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="81.28" x2="172.72" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="78.74" x2="170.18" y2="78.74" width="0.1524" layer="91"/>
-<junction x="170.18" y="78.74"/>
+<wire x1="177.8" y1="142.24" x2="177.8" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="144.78" x2="180.34" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="142.24" x2="177.8" y2="142.24" width="0.1524" layer="91"/>
+<junction x="177.8" y="142.24"/>
 </segment>
 <segment>
 <pinref part="LS1" gate="G$1" pin="N"/>
@@ -17058,14 +17077,14 @@ Datasheet (TS53YL502MR10)</description>
 <label x="99.06" y="66.04" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="160.02" y1="91.44" x2="160.02" y2="93.98" width="0.1524" layer="91"/>
-<label x="160.02" y="96.52" size="1.778" layer="95"/>
+<wire x1="167.64" y1="154.94" x2="167.64" y2="157.48" width="0.1524" layer="91"/>
+<label x="167.64" y="160.02" size="1.778" layer="95"/>
 <pinref part="S3" gate="1" pin="S"/>
 <pinref part="S3" gate="1" pin="S1"/>
-<wire x1="160.02" y1="93.98" x2="160.02" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="91.44" x2="162.56" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="93.98" x2="160.02" y2="93.98" width="0.1524" layer="91"/>
-<junction x="160.02" y="93.98"/>
+<wire x1="167.64" y1="157.48" x2="167.64" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="154.94" x2="170.18" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="157.48" x2="167.64" y2="157.48" width="0.1524" layer="91"/>
+<junction x="167.64" y="157.48"/>
 </segment>
 </net>
 <net name="SW1" class="0">
@@ -17076,14 +17095,18 @@ Datasheet (TS53YL502MR10)</description>
 <label x="99.06" y="68.58" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="149.86" y1="91.44" x2="149.86" y2="93.98" width="0.1524" layer="91"/>
-<label x="149.86" y="96.52" size="1.778" layer="95"/>
+<wire x1="134.62" y1="157.48" x2="134.62" y2="160.02" width="0.1524" layer="91"/>
+<label x="134.62" y="162.56" size="1.778" layer="95"/>
 <pinref part="S2" gate="1" pin="S"/>
 <pinref part="S2" gate="1" pin="S1"/>
-<wire x1="149.86" y1="93.98" x2="149.86" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="91.44" x2="152.4" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="93.98" x2="149.86" y2="93.98" width="0.1524" layer="91"/>
-<junction x="149.86" y="93.98"/>
+<wire x1="134.62" y1="160.02" x2="134.62" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="157.48" x2="137.16" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="160.02" x2="134.62" y2="160.02" width="0.1524" layer="91"/>
+<junction x="134.62" y="160.02"/>
+<pinref part="C1" gate="G$1" pin="+"/>
+<wire x1="142.24" y1="154.94" x2="142.24" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="160.02" x2="137.16" y2="160.02" width="0.1524" layer="91"/>
+<junction x="137.16" y="160.02"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -17119,14 +17142,14 @@ Datasheet (TS53YL502MR10)</description>
 <label x="99.06" y="45.72" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="170.18" y1="91.44" x2="170.18" y2="93.98" width="0.1524" layer="91"/>
-<label x="170.18" y="96.52" size="1.778" layer="95"/>
+<wire x1="177.8" y1="154.94" x2="177.8" y2="157.48" width="0.1524" layer="91"/>
+<label x="177.8" y="160.02" size="1.778" layer="95"/>
 <pinref part="S4" gate="1" pin="S"/>
 <pinref part="S4" gate="1" pin="S1"/>
-<wire x1="170.18" y1="93.98" x2="170.18" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="91.44" x2="172.72" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="93.98" x2="170.18" y2="93.98" width="0.1524" layer="91"/>
-<junction x="170.18" y="93.98"/>
+<wire x1="177.8" y1="157.48" x2="177.8" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="154.94" x2="180.34" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="157.48" x2="177.8" y2="157.48" width="0.1524" layer="91"/>
+<junction x="177.8" y="157.48"/>
 </segment>
 </net>
 <net name="N$9" class="0">
