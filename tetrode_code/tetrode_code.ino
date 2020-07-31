@@ -6,7 +6,7 @@
 #include <EEPROM.h>
 
 #define HOLD_THRESH 300
-#define MAX_CNT 100
+#define MAX_CNT 120
 #define MIN_CNT 0
 #define MAX_SPD 500
 #define MIN_SPD 50
@@ -163,15 +163,26 @@ void loop() {
   }
   
   lcd.setCursor(0, 0);
-  lcd.print("FWD REV SPD CNT");
+  lcd.print("FWD REV CT  SP ");
+  switch(edit_state){
+    case PRESET:
+      lcd.print(preset_counter);
+      break;
+    case EDIT:
+      lcd.print("E");
+      break;
+    default:
+      break;
+  }
   lcd.setCursor(0, 1);
   lcd.print(pad_num(preset.fwd_count, 3));
   lcd.print(" ");
   lcd.print(pad_num(preset.rev_count, 3));
   lcd.print(" ");
+  lcd.print(pad_num(fs.get_rotations(), 3));
+  lcd.print(" ");
   lcd.print(pad_num(preset.spd_count, 3));
   lcd.print(" ");
-  lcd.print(pad_num(fs.get_rotations(), 3));
   
   switch(edit_state){
     case PRESET:
