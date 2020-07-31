@@ -16,8 +16,8 @@ const unsigned int servo_drive_pin = 3;
 const unsigned int servo_feedback_pin = 4;
 Servo servo;
 
-unsigned int fwd_count = 10;
-unsigned int rev_count = 10;
+int fwd_count = 1;
+int rev_count = 1;
 unsigned int speed_count = 200;
 
 enum State{
@@ -57,6 +57,8 @@ void setup() {
   fs.init();
   fs.stop();
   state = STOP;
+  fs.reg_next_pos();
+  fs.set_start();
   edit_state = PRESET;
   Serial.begin(9600);
 }
@@ -103,6 +105,9 @@ void loop() {
       }
       break;
     case BUZZ:
+      fs.stop();
+      delay(500);
+      fs.reset_flags();
       fs.go(NEUTRAL_US - speed_count);
       state = REV;
       break;
@@ -111,7 +116,7 @@ void loop() {
         fs.stop();
         millis_timer = millis();
         state = PAUSE_R1;
-      }else if(fs.get_rotations() <= fwd_count - rev_count){
+      }else if(fs.get_rotations() <= ((fwd_count - rev_count) - 1)){
         fs.stop();
         state = STOP;
       }
@@ -139,5 +144,15 @@ void loop() {
     default:
       break;
   }
-  Serial.println(state);
+  Serial.print(fs.above_thresh);
+  Serial.print(",");
+  Serial.print(fs.below_thresh);
+  Serial.print(",");
+  Serial.print(fs.center_thresh);
+  Serial.print(",");
+  Serial.print(state);
+  Serial.print(",");
+  Serial.print(((fwd_count - rev_count) - 1));
+  Serial.print(",");
+  Serial.println(fs.get_rotations());
 }

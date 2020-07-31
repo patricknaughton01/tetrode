@@ -12,6 +12,7 @@
 #define STOP_D 0
 #define PULSE_MIN 0
 #define PULSE_MAX 1100
+#define PULSE_THRESH 50
 
 class Fservo{
   public: 
@@ -19,9 +20,13 @@ class Fservo{
     void init();
     void reg_next_pos();
     void set_start();
+    void reset_flags();
     void go(int speed);
     void stop();
     int get_rotations();
+    bool below_thresh;
+    bool above_thresh;
+    bool center_thresh;
   private:
     const int pin;
     const int fpin;
