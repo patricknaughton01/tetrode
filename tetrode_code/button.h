@@ -12,8 +12,8 @@ class Button{
     int get_this_state();
     bool pressed();
     bool released();
-    bool high();
-    bool low();
+    bool up();
+    bool down();
   private:
     const int pin;
     int last_state;

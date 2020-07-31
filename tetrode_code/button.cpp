@@ -1,6 +1,6 @@
 #include "button.h"
 
-Button::Button(int pin):pin(pin), last_state(0), this_state(0){}
+Button::Button(int pin):pin(pin), last_state(HIGH), this_state(HIGH){}
 
 void Button::init(){
   pinMode(pin, INPUT);
@@ -27,10 +27,10 @@ bool Button::released(){
   return ((last_state == LOW) && (this_state == HIGH));
 }
 
-bool Button::high(){
+bool Button::up(){
   return this_state == HIGH;
 }
 
-bool Button::low(){
+bool Button::down(){
   return this_state == LOW;
 }

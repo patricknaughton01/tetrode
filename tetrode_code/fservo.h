@@ -18,18 +18,19 @@ class Fservo{
     Fservo(Servo s, int pin, int fpin);
     void init();
     void reg_next_pos();
+    void set_start();
     void go(int speed);
     void stop();
     int get_rotations();
-    int last_pos;
-    int this_pos;
-    int start_pos;
   private:
     const int pin;
     const int fpin;
     Servo servo;
     int rotations;
     int direction;
+    int last_pos;
+    int this_pos;
+    int start_pos;
     
     int bound(int x, int high, int low);
     int center(int x, int center, int high, int low);

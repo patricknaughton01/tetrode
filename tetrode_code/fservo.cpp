@@ -22,10 +22,12 @@ void Fservo::reg_next_pos(){
     }
 }
 
+void Fservo::set_start(){
+  start_pos = this_pos;
+  rotations = 0;
+}
+
 void Fservo::go(int speed){
-    stop();
-    rotations = 0;
-    start_pos = this_pos;
     speed = bound(speed, FWD_US, REV_US);
     direction = speed > NEUTRAL_US ? FWD_D : REV_D;
     servo.writeMicroseconds(speed);
