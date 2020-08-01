@@ -13,7 +13,7 @@
 #define NUM_PRE 5
 
 const unsigned int button1_pin = 0;
-const unsigned int button2_pin = 9;
+const unsigned int button2_pin = 1;
 const unsigned int button3_pin = 8;
 
 const unsigned int fwd_pot_pin = A0;
