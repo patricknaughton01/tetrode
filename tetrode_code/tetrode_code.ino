@@ -8,7 +8,7 @@
 #define HOLD_THRESH 300
 #define MAX_CNT 120
 #define MIN_CNT 0
-#define MAX_SPD 500
+#define MAX_SPD 200
 #define MIN_SPD 50
 #define NUM_PRE 5
 
