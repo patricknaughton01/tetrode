@@ -91,7 +91,7 @@ void loop() {
       if(b1.released()){
         state = FWD;
         fs.set_start();
-        fs.go(NEUTRAL_US + preset.spd_count);
+        fs.go(NEUTRAL_US - preset.spd_count);
       }
       break;
     case FWD:
@@ -115,15 +115,14 @@ void loop() {
       break;
     case PAUSE_F2:
       if(b1.released()){
-        fs.go(NEUTRAL_US + preset.spd_count);
+        fs.go(NEUTRAL_US - preset.spd_count);
         state = FWD;
       }
       break;
     case BUZZ:
       fs.stop();
       delay(500);
-      fs.reset_flags();
-      fs.go(NEUTRAL_US - preset.spd_count);
+      fs.go(NEUTRAL_US + preset.spd_count);
       state = REV;
       break;
     case REV:
@@ -131,7 +130,7 @@ void loop() {
         fs.stop();
         millis_timer = millis();
         state = PAUSE_R1;
-      }else if(fs.get_rotations() <= ((preset.fwd_count - preset.rev_count) - 1)){
+      }else if(fs.get_rotations() < ((float)(preset.fwd_count - preset.rev_count))){
         fs.stop();
         fs.set_start();
         state = STOP;
@@ -148,8 +147,8 @@ void loop() {
       break;
     case PAUSE_R2:
       if(b1.released()){
-        fs.go(NEUTRAL_US - preset.spd_count);
-        state = FWD;
+        fs.go(NEUTRAL_US + preset.spd_count);
+        state = REV;
       }
       break;
     case PAUSE_STOP:

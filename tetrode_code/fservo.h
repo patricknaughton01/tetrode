@@ -20,18 +20,15 @@ class Fservo{
     void init();
     void reg_next_pos();
     void set_start();
-    void reset_flags();
     void go(int speed);
     void stop();
-    int get_rotations();
-    bool below_thresh;
-    bool above_thresh;
-    bool center_thresh;
+    float get_rotations();
   private:
     const int pin;
     const int fpin;
     Servo servo;
     int rotations;
+    float rot_frac;
     int direction;
     int last_pos;
     int this_pos;

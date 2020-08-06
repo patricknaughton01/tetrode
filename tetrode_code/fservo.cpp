@@ -6,8 +6,8 @@
 #define ABS(x) ((x)>0 ? (x) : (-(x)))
 
 Fservo::Fservo(Servo s, int pin, int fpin):servo(s), pin(pin), fpin(fpin), 
-    last_pos(0), this_pos(0), start_pos(0), rotations(0), direction(0),
-    below_thresh(false), above_thresh(false), center_thresh(true){};
+    last_pos(0), this_pos(0), start_pos(0), rotations(0), rot_frac(0.0), 
+    direction(0){};
 
 void Fservo::init(){
     servo.attach(pin);
@@ -19,35 +19,19 @@ void Fservo::reg_next_pos(){
     int clp = center(last_pos, start_pos, PULSE_MAX, PULSE_MIN);
     int ctp = center(this_pos, start_pos, PULSE_MAX, PULSE_MIN);
     int mid = (PULSE_MAX - PULSE_MIN) / 2;
-    if(ctp > PULSE_THRESH && ctp < mid){
-      above_thresh = true;
-      if(below_thresh && center_thresh){
+    if(ABS(ctp - clp) > mid){
+      if(ctp < clp){
+        rotations++;
+      }else{
         rotations--;
       }
-      below_thresh = false;
-      center_thresh = false;
-    }else if((ctp < (PULSE_MAX - PULSE_THRESH)) && ctp > mid){
-      below_thresh = true;
-      if(above_thresh && center_thresh){
-        rotations++;
-      }
-      above_thresh = false;
-      center_thresh = false;
-    }else if(ctp < PULSE_THRESH || ctp > (PULSE_MAX-PULSE_THRESH)){
-      center_thresh = true;
     }
+    rot_frac = ctp / ((float)(PULSE_MAX - PULSE_MIN));
 }
 
 void Fservo::set_start(){
-  reset_flags();
   start_pos = this_pos;
   rotations = 0;
-}
-
-void Fservo::reset_flags(){
-  above_thresh = false;
-  below_thresh = false;
-  center_thresh = true;
 }
 
 void Fservo::go(int speed){
@@ -61,8 +45,8 @@ void Fservo::stop(){
     servo.writeMicroseconds(NEUTRAL_US);
 }
 
-int Fservo::get_rotations(){
-  return rotations;
+float Fservo::get_rotations(){
+  return rotations + rot_frac;
 }
 
 int Fservo::bound(int x, int high, int low){
