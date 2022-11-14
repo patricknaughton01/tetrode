@@ -12,13 +12,13 @@
 #define MIN_SPD 50
 #define NUM_PRE 5
 
-const unsigned int button1_pin = 0;
+const unsigned int button1_pin = 8;
 const unsigned int button2_pin = 1;
-const unsigned int button3_pin = 8;
+const unsigned int button3_pin = 0;
 
-const unsigned int fwd_pot_pin = A0;
+const unsigned int fwd_pot_pin = A2;
 const unsigned int rev_pot_pin = A1;
-const unsigned int speed_pot_pin = A2;
+const unsigned int speed_pot_pin = A0;
 
 const unsigned int servo_drive_pin = 3;
 const unsigned int servo_feedback_pin = 2;

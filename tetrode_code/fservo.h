@@ -4,7 +4,7 @@
 #include "Arduino.h"
 #include <Servo.h>
 
-#define NEUTRAL_US 1500
+#define NEUTRAL_US 1550
 #define REV_US 1000
 #define FWD_US 2000
 #define FWD_D 1
